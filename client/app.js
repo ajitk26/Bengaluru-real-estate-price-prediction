@@ -26,8 +26,7 @@ function getBathValue() {
     let location = document.getElementById("uiLocations");
     let estPrice = document.getElementById("uiEstimatedPrice");
   
-    let url = "http://127.0.0.1:5000/predict_home_price"; //Use this if you are NOT using nginx which is first 7 tutorials
-    //var url = "/api/predict_home_price"; // Use this if  you are using nginx. i.e tutorial 8 and onwards
+    let url = "http://127.0.0.1:5000/predict_home_price"; 
   
     $.post(url, {
         total_sqft: parseFloat(sqft.value),
@@ -43,8 +42,6 @@ function getBathValue() {
   
   function onPageLoad() {
     console.log( "document loaded" );
-    let url = "http://127.0.0.1:5000/get_location_names"; // Use this if you are NOT using nginx which is first 7 tutorials
-    //let url = "/api/get_location_names"; // Use this if  you are using nginx.
     $.get(url,function(data, status) {
         console.log("got response for get_location_names request");
         if(data) {
